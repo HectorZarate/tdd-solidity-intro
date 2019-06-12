@@ -12,6 +12,12 @@ contract Funding is Ownable {
   uint public finishesAt;
   mapping(address => uint) public balances;
 
+/*
+Modifiers are used as an extention of a function.
+Modifier code is ran before the function code
+ `_;` continues to execution of the function
+Results in less duplicated code for common conditions
+*/
   modifier onlyNotFinished() {
     require(!isFinished());
     _;
